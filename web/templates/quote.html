@@ -1,0 +1,17 @@
+<div class="quote">
+    <h2>{{ quote.event.name }}</h2>
+    <blockquote >{{ quote.quote }}</blockquote>
+    <div class="description">
+        El <span class="date">{{ quote.date }}</span>
+        {% if quote.event %} en <span class="place">{{ quote.event.place }}</span>.
+            Ver más frases de <a href="/event/{{ quote.event.id }}">{{ quote.event.name }}</a>
+        {% endif %}
+    </div>
+    {% if quote %}
+    <div class="rates">
+        <a href="/quote/{{ quote.id }}/dislike" class="vote_down">Mala (<span>{{ quote.votes_down }}</span>)</a>
+        <a href="/quote/{{ quote.id }}/like" class="vote_up">Buena (<span>{{ quote.votes_up }}</span>)</a>
+    </div>
+    {% endif %}
+    <div id="clear"></div>
+</div>

@@ -1,0 +1,38 @@
+{% extends "index.html" %}
+{% load pagination_tags %}
+
+{% block content %}
+
+<h1>Últimas frases</h2>
+
+{% if quotes %}
+    {% autopaginate quotes 10 %}
+    {% for quote in quotes %}
+        {% include "quote.html" %}
+        <div class="hr"></div>
+    {% endfor %}
+    {% paginate %}
+{% else %}
+    <p>No hay frases subidas. Sé el primero!</p>
+{% endif %}
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('a.vote_up, a.vote_down').click(function(e) {
+            e.preventDefault();
+
+            var anchor = $(this);
+            $.getJSON(anchor.attr('href'), function(data) {
+                var result = data[0];
+                if (result.success) {
+                    anchor.children("span").html(result.votes);
+                } else {
+                    showError(result.error);
+                }
+            });
+        });
+    });
+</script>
+
+{% endblock %}
+

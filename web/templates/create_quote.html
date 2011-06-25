@@ -1,0 +1,35 @@
+{% extends "index.html" %}
+
+{% block content %}
+
+<h1>Agregá tus frases!</h2>
+
+<form action="/quote/create/" method="post">{% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Subir!"/>
+</form>
+
+<div class="hr"></div>
+{% include "quote.html" %}
+<div class="hr"></div>
+
+<script type="text/javascript">
+    $(function() {
+        $("#id_date").datepicker();
+
+        // Preview
+        $("#id_date").change(function() {
+            $("div.quote span.date").html(this.value);
+        });
+        $("div.quote span.date").html($("#id_date").val());
+
+        $("#id_quote").change(function() {
+            $("div.quote blockquote").html(this.value);
+        });
+        $("div.quote blockquote").html($("#id_quote").val());
+        $("div.quote h2").html("Previsualización");
+    });
+</script>
+
+{% endblock %}
+

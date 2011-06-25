@@ -1,0 +1,26 @@
+{% extends "index.html" %}
+
+{% block content %}
+
+<h1>Agregá tu evento!</h2>
+
+<form action="/event/create/" method="post">{% csrf_token %}
+    {{ form.as_p }}
+    {{ formset.management_form }}
+    <table>
+        {% for f in formset %}
+        {{ f }}
+        {% endfor %}
+    </table>
+    <input type="submit" value="Subir!"/>
+</form>
+
+<script type="text/javascript">
+    $(function() {
+        $("#id_date").datepicker();
+        //$("label").inFieldLabels();
+    });
+</script>
+
+{% endblock %}
+

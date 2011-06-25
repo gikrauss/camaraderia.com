@@ -1,0 +1,70 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+    <title>{% block title %}Camaraderia.com{% endblock %}</title>
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon"/>
+    <link rel="stylesheet" type="text/css" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.2/themes/ui-lightness/jquery-ui.css"/>
+    <link rel="stylesheet" type="text/css" href="/static/css/style.css"/>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js" type="text/javascript"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.13/jquery-ui.min.js" type="text/javascript"></script>
+    <script src="/static/js/jquery.infieldlabel.min.js" type="text/javascript"></script>
+
+    <script type="text/javascript">
+    function showError(msg) {
+        alert(msg);
+    }
+    </script>
+</head>
+
+<body>
+
+<div id="header">
+
+    <h1><a href="/"><span class="orange">.:</span> camaraderia</a></h1>
+    <h2>"churro, faca y póker"</h2>
+
+    <ul id="nav">
+        <li><a href="/">Últimas</a></li>
+        <li><a href="/best/">Mejores</a></li>
+        <li><a href="/worst/">Peores</a></li>
+        <li class="right"><a href="/quote/create">Subí tus frases!</a></li>
+    </ul>
+    <script type="text/javascript">
+        $("ul#nav li a[href='" + document.location.pathname + "']").addClass("currentPage");
+    </script>
+
+</div>
+
+<div id="container">
+
+    <div id="left">
+        {% block content %}{% endblock %}
+    </div>
+
+    <div id="right">
+
+        <h1>Qué es la camaradería?</h1>
+        <p>f. Amistad o relación cordial que mantienen entre sí los buenos camaradas:</p>
+        <p>en el departamento reinaba una gran camaradería entre compañeros.</p>
+
+        <div class="hr"></div>
+
+        <h1>Algunos links</h1>
+
+        <ul class="links">
+            <li><a href="http://www.facebook.com/pages/camaraderiacom/236863946327511">Camaraderia.com en Facebook</a></li>
+        </ul>
+
+        <div class="hr"></div>
+
+    </div>
+
+    <div id="clear"></div>
+
+</div>
+
+<div id="copyright">&copy;2011 Germán Krauss. &nbsp; <a href="http://free-css-templates.gorotron.com">CSS template</a> by <a href="http://free-css-templates.gorotron.com">gorotron</a>.</div>
+
+</body>
+</html>

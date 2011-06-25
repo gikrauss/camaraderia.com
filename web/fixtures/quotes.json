@@ -1,0 +1,77 @@
+[
+    {
+        "pk": 1,
+        "model": "web.event",
+        "fields": {
+            "date": "2011-06-10",
+            "place": "Bunker del gorila",
+            "name": "Poker night"
+        }
+    },
+    {
+        "pk": 1,
+        "model": "web.quote",
+        "fields": {
+            "date": "2011-06-10",
+            "quote": "Me siento en el puerto de Mar del Plata",
+            "votes_down": 0,
+            "event": 1,
+            "votes_up": 44
+        }
+    },
+    {
+        "pk": 2,
+        "model": "web.quote",
+        "fields": {
+            "date": "2011-06-10",
+            "quote": "La luz puto!",
+            "votes_down": 0,
+            "event": 1,
+            "votes_up": 5
+        }
+    },
+    {
+        "pk": 3,
+        "model": "web.quote",
+        "fields": {
+            "date": "2011-06-10",
+            "quote": "-Doy Johnson?? -Si si, Dallas Boston",
+            "votes_down": 0,
+            "event": 1,
+            "votes_up": 1
+        }
+    },
+    {
+        "pk": 4,
+        "model": "web.quote",
+        "fields": {
+            "date": "2011-06-10",
+            "quote": "Me encantaba el agua fresca de las heladerías",
+            "votes_down": 0,
+            "event": 1,
+            "votes_up": 0
+        }
+    },
+    {
+        "pk": 5,
+        "model": "web.quote",
+        "fields": {
+            "date": "2011-06-10",
+            "quote": "Yo soy pelotudo pero vos hiciste all in con el fernet",
+            "votes_down": 0,
+            "event": 1,
+            "votes_up": 0
+        }
+    },
+    {
+        "pk": 6,
+        "model": "web.quote",
+        "fields": {
+            "date": "2011-06-10",
+            "quote": "Parece un Chester pero no lo es",
+            "votes_down": 0,
+            "event": 1,
+            "votes_up": 0
+        }
+    }
+]

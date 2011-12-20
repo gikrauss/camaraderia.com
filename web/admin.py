@@ -35,6 +35,11 @@ class EventAdmin(admin.ModelAdmin):
         QuoteInline,
     ]
     actions = [export_as_csv]
+    list_per_page = 10
+    list_filter = ('date',)
+
+class QuoteAdmin(admin.ModelAdmin):
+    list_filter = ('event',)
 
 admin.site.register(Event, EventAdmin)
-admin.site.register(Quote)
+admin.site.register(Quote, QuoteAdmin)
